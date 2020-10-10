@@ -1,0 +1,31 @@
+<?php 
+require '../config.php';
+
+if(isset($_POST['action'])){
+
+   if($_POST['action']=='delete-user'){
+    $id = $_POST['d_id'];
+    $sql = "delete from users where id ='$id'";
+
+    if (mysqli_query($conn,$sql)==TRUE){
+
+    	$output = array(
+         'success' => true,
+         'msg'=>'user deleted successfully',
+    	);
+    }else{
+    	$output = array(
+         'success' => false,
+         'msg'=>'unknown error occured',
+    	);
+
+    }
+
+   }
+
+   echo json_encode($output);
+}
+
+
+
+ ?>
