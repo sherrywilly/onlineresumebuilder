@@ -5,7 +5,10 @@ require '../config.php';
 
  ?>
 
+<?php 
 
+$id =$_POST['rid'];
+ ?>
 
 
  <div class="card mt-2">
@@ -23,7 +26,7 @@ require '../config.php';
  				</thead>
  				<tbody>
  					<?php 
- 					$sql = "select * from education";
+ 					$sql = "select * from education where rid ='$id'";
  					$result = mysqli_query($conn,$sql);
  					if(mysqli_num_rows($result)>0){
  						while($r=mysqli_fetch_assoc($result)){

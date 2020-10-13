@@ -4,6 +4,10 @@
 require '../config.php';
 
  ?>
+<?php
+
+$id = $_POST['rid'];
+ ?>
 
 
 
@@ -19,7 +23,7 @@ require '../config.php';
  				</thead>
  				<tbody>
  					<?php 
- 					$sql = "select * from hobbies";
+ 					$sql = "select * from hobbies where rid='$id'";
  					$result = mysqli_query($conn,$sql);
  					if(mysqli_num_rows($result)>0){
  						while($r=mysqli_fetch_assoc($result)){

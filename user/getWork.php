@@ -5,11 +5,14 @@ require '../config.php';
 
  ?>
 
+<?php 
 
+$id =$_POST['rid'];
+ ?>
 
 
  <div class="card mt-2">
- 	<div class="card-header text-capitalize text-center"> education details</div>
+ 	<div class="card-header text-capitalize text-center"> work experince details</div>
  	<div class="card">
  		<div class="table-responsive">
  			<table class="table">
@@ -23,7 +26,7 @@ require '../config.php';
  				</thead>
  				<tbody>
  					<?php 
- 					$sql = "select * from work";
+ 					$sql = "select * from work where rid='$id'";
  					$result = mysqli_query($conn,$sql);
  					if(mysqli_num_rows($result)>0){
  						while($r=mysqli_fetch_assoc($result)){

@@ -13,6 +13,8 @@ function showTab(n) {
   }
   if (n == (x.length - 1)) {
     document.getElementById("nextBtn").innerHTML = "Submit";
+    document.getElementById("nextBtn").id = "cover";
+
   } else {
     document.getElementById("nextBtn").innerHTML = "Next";
   }
@@ -32,8 +34,7 @@ function nextPrev(n) {
   // if you have reached the end of the form...
   if (currentTab >= x.length) {
     // ... the form gets submitted:
-    document.getElementById("regForm").submit();
-    return false;
+     location.reload();
   }
   // Otherwise, display the correct tab:
   showTab(currentTab);

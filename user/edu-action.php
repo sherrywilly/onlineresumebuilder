@@ -17,11 +17,13 @@ if($_POST['insert']=="edu-form"){
 
 	}else{
 
+
+// var_dump($_POST);
 	$from_date = $_POST['from'];
 	$to_date = $_POST['to'];
 	$college = $_POST['college'];
 	$course = $_POST['course'];
-	$rsd = 1;
+	$rsd = $_POST['rid'];
 
 	$sql ="insert into education(rid,from_date,to_date,course,college) values ('$rsd','$from_date','$to_date','$course','$college')";
 	if(mysqli_query($conn, $sql) ==TRUE){
@@ -40,7 +42,7 @@ if($_POST['insert']=="work-form"){
 	$to_date = $_POST['to'];
 	$position = $_POST['post'];
 	$company = $_POST['company'];
-	$rsd = 1;
+	$rsd = $_POST['rid'];
 
 	$sql ="insert into work(rid,from_date,to_date,post,company) values ('$rsd','$from_date','$to_date','$position','$company')";
 	if(mysqli_query($conn, $sql) ==TRUE){
