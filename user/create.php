@@ -397,6 +397,7 @@ let item = sessionStorage.getItem("getid");
 if(item!=null){
     // alert(item);
     $('.rid').val(item);
+    $('#save-user').html('update user')
     $.ajax({
         url: 'usercreate.php',
         type: 'POST',

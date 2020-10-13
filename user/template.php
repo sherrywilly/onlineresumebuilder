@@ -13,7 +13,7 @@ include 'header.php';
 	<div class="card-body">
 			<img src="https://www.w3schools.com/howto/img_snow.jpg" alt="..." class="img-thumbnail">
 			<div class="text-right mt-1">
-			<button class="btn btn-success">download</button>
+			<button class="btn btn-outline-success"><i class="fas fa-download"></i> download</button>
 			</div></div>
 </div>
 
@@ -23,7 +23,7 @@ include 'header.php';
 	<div class="card-body">
 			<img src="https://www.w3schools.com/howto/img_snow.jpg" alt="..." class="img-thumbnail">
 			<div class="text-right mt-1">
-			<button class="btn btn-success">download</button>
+			<button class="btn btn-outline-success"><i class="fas fa-download"></i> download</button>
 			</div></div>
 </div>
 
@@ -33,7 +33,7 @@ include 'header.php';
 	<div class="card-body">
 			<img src="https://www.w3schools.com/howto/img_snow.jpg" alt="..." class="img-thumbnail">
 			<div class="text-right mt-1">
-			<button class="btn btn-success">download</button>
+			<button class="btn btn-outline-success">download <i class="fas fa-download"></i></button>
 			</div></div>
 </div>
 
