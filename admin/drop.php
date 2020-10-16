@@ -23,6 +23,45 @@ if(isset($_POST['action'])){
 
    }
 
+
+
+//deleteting the template
+
+
+   if($_POST['action']=="template-drop"){
+    $id = $_POST['id'];
+    $sql = "delete from template where id ='$id'";
+
+
+    if (mysqli_query($conn,$sql)==TRUE){
+
+        $output = array(
+         'success' => true,
+         'msg'=>'user deleted successfully',
+        );
+    }else{
+        $output = array(
+         'success' => true,
+         'msg'=>'unknown error occured',
+        );
+
+    }
+    
+
+
+
+
+   }
+
+
+
+
+
+
+
+
+
+
    echo json_encode($output);
 }
 

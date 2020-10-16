@@ -37,24 +37,9 @@ include 'header.php';
                                 <textarea class="form-control mt-1" rows="6" placeholder="Address" name="address" id="address" required></textarea>
 
                             </div>
-                            <div class="form-group">
-                            <div class="row">
-                                <div class="col-md-6 col-sm-6">
-                                    
-                                        <input type="text" name="town" class="form-control" placeholder="town" id="town" required>
-                                    </div>
-                               
-                                <div class="col-md-6 col-sm-6">
-                                    
-                                        <input type="text" name="city" class="form-control" placeholder="city" id="city" required>
-                                    </div>
-                                </div>
-                            </div>
+                         
                             <div class="form-group">
                                 <input type="date" class="form-control" name="dob" placeholder="Date of birth" id="dob" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="pin" placeholder="pincode..." id="pin" required>
                             </div>
                             <div class="form-group">
                                 <input type="email" class="form-control" name="email" placeholder="Email..."  id="email" required>
@@ -63,18 +48,7 @@ include 'header.php';
                                 <input type="text" class="form-control" name="phone" placeholder="Phone..." id="phone" required>
                             </div>
 
-                            <div class="row">
-                                <div class="col-md-6 col-sm-6">
-                                    <div class="form-group">
-                                        <input type="text" name="faname" class="form-control" placeholder="Fathers name" id="faname" required>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-sm-6">
-                                    <div class="form-group">
-                                        <input type="text" name="mname" class="form-control" placeholder="Mothers name" id="moname" required>
-                                    </div>
-                                </div>
-                            </div>
+                            
                               <fieldset class="form-group row">
       <legend class="col-form-legend col-sm-2 text-light col-2">fresher</legend>
       <div class="col-sm-10 col-10">
@@ -410,14 +384,10 @@ if(item!=null){
         $('#fname').val(res.fname);
         $('#lname').val(res.lname);
         $('#address').val(res.address);
-        $('#town').val(res.town);
-        $('#city').val(res.city);
         $('#dob').val(res.dob);
-        $('#pin').val(res.pin);
         $('#email').val(res.email);
         $('#phone').val(res.phone);
-        $('#faname').val(res.father_name);
-        $('#moname').val(res.mother_name);
+         
        
         
 

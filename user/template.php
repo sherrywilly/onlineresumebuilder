@@ -1,5 +1,6 @@
-<?php 
+<?php
 include 'header.php';
+require '../config.php';
  ?>
 
 <div class="wrapper text-center font-weight-bold text-center text-capitalize mt-3">
@@ -8,41 +9,51 @@ include 'header.php';
 <div class="container mt-3">
 	<div class="row">
 
+<?php 
+$sql = "select * from template";
+
+$result = mysqli_query($conn,$sql);
+
+if(mysqli_num_rows($result)>0){
+
+	while($row=mysqli_fetch_assoc($result)){
+
+
+ ?>
+
+
 		<div class="col-md-4">
 <div class="card">
 	<div class="card-body">
-			<img src="https://www.w3schools.com/howto/img_snow.jpg" alt="..." class="img-thumbnail">
+			<img src="<?php echo $row['img']; ?>" alt="..." class="img-fluid img-thumbnail">
 			<div class="text-right mt-1">
-			<button class="btn btn-outline-success"><i class="fas fa-download"></i> download</button>
-			</div></div>
+			
+			<a href="<?php echo $row['path']; ?>" target="_blank" class="btn btn-outline-success"> <i class="fas fa-download">download</i></a>
+			</div>
+		</div>
 </div>
 
 		</div>
-		<div class="col-md-4">
-<div class="card">
-	<div class="card-body">
-			<img src="https://www.w3schools.com/howto/img_snow.jpg" alt="..." class="img-thumbnail">
-			<div class="text-right mt-1">
-			<button class="btn btn-outline-success"><i class="fas fa-download"></i> download</button>
-			</div></div>
-</div>
 
-		</div>
-		<div class="col-md-4">
-<div class="card">
-	<div class="card-body">
-			<img src="https://www.w3schools.com/howto/img_snow.jpg" alt="..." class="img-thumbnail">
-			<div class="text-right mt-1">
-			<button class="btn btn-outline-success">download <i class="fas fa-download"></i></button>
-			</div></div>
-</div>
 
-		</div>
+
+
+
+		<?php 
+
+}
+}
+		 ?>
 		
 	</div>
 </div>
+''
+<script>
+	
 
 
- <?php 
- include 'footer.php'; 
+</script>
+
+ <?php
+ include 'footer.php';
  ?>
