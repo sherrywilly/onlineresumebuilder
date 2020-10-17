@@ -35,6 +35,43 @@ if (isset($_POST['var'])) {
         'get_id' => $last_id,
     ];
         }
+    } elseif ($_POST['var'] == 'update') {
+        $fname = $_POST['fname'];
+        $lname = $_POST['lname'];
+        $add = $_POST['address'];
+        $dob = $_POST['dob'];
+        $email = $_POST['email'];
+        $phone = $_POST['phone'];
+        $fresh = $_POST['fresher'];
+        $id = $_POST['rid'];
+
+        $sql = "update resume_build set fname ='$fname',
+        lname ='$lname',
+        address = '$add',
+        dob ='$dob',
+        email = '$email',
+        phone ='$phone',
+        fresher ='$fresh' where id ='$id'";
+
+        if (mysqli_query($conn, $sql) == true) {
+            $last_id = mysqli_insert_id($conn);
+        } else {
+            ++$error;
+            $msg = 'unknown error occured';
+        }
+
+        if ($error > 0) {
+            $output = [
+        'status' => false,
+        'msg' => $msg,
+    ];
+        } else {
+            $output = [
+        'status' => true,
+        'msg' => 'user updated successfully',
+        'get_id' => $id,
+    ];
+        }
     }
     echo json_encode($output);
 }

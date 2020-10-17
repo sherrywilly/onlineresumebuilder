@@ -67,7 +67,7 @@ include 'header.php';
 </div>
         
     </fieldset>
-                            <input type="hidden" name="var" value="insert">
+                            <input type="hidden" name="var" value="insert" id="var">
                             <input type="hidden" name="rid" class="rid" id="rid">
                             <button type="submit" class="btn btn-block btn-success" id="save-user">save details</button>
                         </form>
@@ -367,10 +367,13 @@ $(document).ready(function(){
 
 
 let item = sessionStorage.getItem("getid");
+alert(item);
 
-if(item!=null){
+if(item!=null && item!=''){
+
     // alert(item);
     $('.rid').val(item);
+    $('#var').val('update');
     $('#save-user').html('update user')
     $.ajax({
         url: 'usercreate.php',
@@ -395,7 +398,7 @@ if(item!=null){
     })
     
 } else{
-sessionStorage.setItem("getid","");
+// sessionStorage.setItem("getid","");
 
 }
 
@@ -592,7 +595,9 @@ function workData(){
                         console.log(x);
                         alert(x);
                         if(x!=''){
-                            $('#save-user').attr('disabled', true)
+                            $('.rid').val(item);
+                            $('#var').val('update');
+                            $('#save-user').html('update user')
                         }
 
                     } else {
