@@ -26,7 +26,7 @@ include 'common/header.php';
                     </div>
 
                     <div class="col-md-12 col-sm-12">
-                         <input type="text" class="form-control" placeholder="Enter your username or email" name="name" required>
+                         <input type="text" class="form-control" placeholder="Enter your username or email" name="uname" required>
           
                          <input type="password" class="form-control" placeholder="Enter your password " name="upass" required>
                     </div>

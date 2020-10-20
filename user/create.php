@@ -48,6 +48,11 @@ include 'header.php';
                                 <input type="text" class="form-control" name="phone" placeholder="Phone..." id="phone" required>
                             </div>
 
+                            <div class="form-group">
+                                <textarea class="form-control mt-1" rows="6" placeholder="Objective" name="objective" id="objective" required></textarea>
+
+                            </div>
+
                             
                               <fieldset class="form-group row">
       <legend class="col-form-legend col-sm-2 text-light col-2">fresher</legend>
@@ -55,10 +60,10 @@ include 'header.php';
         <div class="radio">
             <div class="row">
                 <div class="col-6">
-                    <label class="radio-inline text-light"><input type="radio" name="fresher" value="true">Yes</label>
+                    <label class="radio-inline text-light"><input type="radio" name="fresher" value="1">Yes</label>
                 </div>
                 <div class="col-6">
-                     <label class="radio-inline text-light"><input type="radio" name="fresher" value="false">No</label>
+                     <label class="radio-inline text-light"><input type="radio" name="fresher" value="0">No</label>
                 </div>
             </div>
   
@@ -390,6 +395,7 @@ if(item!=null && item!=''){
         $('#dob').val(res.dob);
         $('#email').val(res.email);
         $('#phone').val(res.phone);
+        $('#objective').val(res.obj);
          
        
         

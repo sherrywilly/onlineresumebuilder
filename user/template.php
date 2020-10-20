@@ -25,10 +25,16 @@ if(mysqli_num_rows($result)>0){
 		<div class="col-md-4">
 <div class="card">
 	<div class="card-body">
-			<img src="<?php echo $row['img']; ?>" alt="..." class="img-fluid img-thumbnail">
+			<img src="<?php echo $row['img']; ?>" alt="..." class="img-fluid img-thumbnail" style="object-fit:cover;width: 100%;height: 200px">
 			<div class="text-right mt-1">
-			
-			<a href="<?php echo $row['path']; ?>" target="_blank" class="btn btn-outline-success"> <i class="fas fa-download">download</i></a>
+
+            <!-- <form action="<?php echo $row['path']; ?>" method="get"> -->
+            	<form action="../templates/test.php" method="get">
+            	<input type="hidden" name="download" id="reid" class="resumeid">
+           <button type="submit" class="btn btn-outline-success"> <i class="fas fa-download">download</i></button>
+
+            </form>
+
 			</div>
 		</div>
 </div>
@@ -49,7 +55,35 @@ if(mysqli_num_rows($result)>0){
 </div>
 ''
 <script>
+	let x =sessionStorage.getItem("getid")
+	alert(x);
+// if(x==""||x==null){
+
+// window.location = "./";
+
+// 	}else{
+document.querySelectorAll(".resumeid").value = "test";
+let y = document.getElementsByClassName("resumeid");
+console.log(y.length);
+
+// y.value = "hjsdfjbvsnd";
+
+
+for(i=0;i<y.length;i++){
+	console.log(y[i]);
+	y[i].value = x;
 	
+
+}
+
+
+
+
+	// }
+
+
+
+
 
 
 </script>

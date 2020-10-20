@@ -12,9 +12,10 @@ if (isset($_POST['var'])) {
         $email = $_POST['email'];
         $phone = $_POST['phone'];
         $fresh = $_POST['fresher'];
+        $obj = $_POST['objective'];
         $uid = 1;
 
-        $sql = "insert into resume_build(fname,lname,address,dob,email,phone,fresher,uid) values ('$fname','$lname','$add','$dob','$email','$phone','$fresh','$uid')";
+        $sql = "insert into resume_build(fname,lname,address,dob,email,phone,fresher,uid,obj) values ('$fname','$lname','$add','$dob','$email','$phone','$fresh','$uid','$obj')";
 
         if (mysqli_query($conn, $sql) == true) {
             $last_id = mysqli_insert_id($conn);
@@ -44,6 +45,7 @@ if (isset($_POST['var'])) {
         $phone = $_POST['phone'];
         $fresh = $_POST['fresher'];
         $id = $_POST['rid'];
+        $obj = $_POST['objective'];
 
         $sql = "update resume_build set fname ='$fname',
         lname ='$lname',
@@ -51,6 +53,7 @@ if (isset($_POST['var'])) {
         dob ='$dob',
         email = '$email',
         phone ='$phone',
+        obj = '$obj',
         fresher ='$fresh' where id ='$id'";
 
         if (mysqli_query($conn, $sql) == true) {
@@ -97,6 +100,7 @@ if (isset($_POST['action'])) {
         $user['email'] = $row['email'];
         $user['phone'] = $row['phone'];
         $user['fresher'] = $row['fresher'];
+        $user['obj'] = $row['obj'];
 
         echo json_encode($user);
     }

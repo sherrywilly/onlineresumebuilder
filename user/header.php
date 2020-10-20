@@ -1,3 +1,14 @@
+<?php
+session_start();
+if(!isset($_SESSION['usertype'])=='user'){
+  header('location:../login.php');
+}
+?>
+
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +33,7 @@
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item">
-        <a class="nav-link font-weight-bold" href="/index.php">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link font-weight-bold" href="index.php">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link font-weight-bold" href="create.php">Create Resume</a>
@@ -31,7 +42,7 @@
         <a class="nav-link font-weight-bold" href="profile.php">Profile</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link font-weight-bold" href="#">logout</a>
+        <a class="nav-link font-weight-bold" href="../logout.php">logout</a>
       </li>
     </ul>
   </div>
