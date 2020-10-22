@@ -1,6 +1,7 @@
 <?php
 
 include 'common/header.php';
+require 'config.php';
 
 ?>
 
@@ -15,77 +16,61 @@ include 'common/header.php';
                               </div>
                          </div>
 
-                         <div class="col-md-4 col-sm-4">
+
+
+
+
+                         <?php 
+
+$sql ="select * from template";
+
+$result = mysqli_query($conn,$sql);
+
+if(mysqli_num_rows($result)>0){
+
+
+
+
+     while($r = mysqli_fetch_assoc($result)){
+?>
+           <div class="col-md-4 col-sm-4">
                               <div class="courses-thumb courses-thumb-secondary">
                                    <div class="courses-top">
                                         <div class="courses-image">
-                                             <img src="images/product-1-720x480.jpg" class="img-responsive" alt="">
+                                             <img src="<?php echo $r['img']; ?>" class="img-responsive" alt="" style="object-fit: cover;height:250px;width: 100%;">
                                         </div>
                                         <div class="courses-date">
-                                             <span title="Posted on"><i class="fa fa-calendar"></i> 15-06-2020</span>
-                                             <span title="Type"><i class="fa fa-file"></i> template</span>
+                                        
+                                             <span title="Type"><i class="fa fa-file"> &nbsp;</i><?php echo $r['name']; ?></span>
                                         </div>
                                    </div>
 
-                                   <div class="courses-detail">
-                                        <h3><a href="job-details.html">Lorem ipsum dolor sit amet</a></h3>
-
-
-                                   </div>
+                                   
 
                                    <div class="courses-info">
-                                        <a href="job-details.html" class="section-btn btn btn-primary btn-block">Create your resume</a>
+                                        <a href="signup.php" class="section-btn btn btn-primary btn-block">Create your resume</a>
                                    </div>
                               </div>
                          </div>
 
-                         <div class="col-md-4 col-sm-4">
-                              <div class="courses-thumb courses-thumb-secondary">
-                                   <div class="courses-top">
-                                        <div class="courses-image">
-                                             <img src="images/product-2-720x480.jpg" class="img-responsive" alt="">
-                                        </div>
-                                        <div class="courses-date">
-                                             <span title="Posted on"><i class="fa fa-calendar"></i> 15-06-2020</span>
-                                             <span title="Type"><i class="fa fa-file"></i> template</span>
-                                        </div>
-                                   </div>
-
-                                   <div class="courses-detail">
-                                        <h3><a href="job-details.html">Lorem ipsum dolor sit amet</a></h3>
+<?php
 
 
-                                   </div>
-
-                                   <div class="courses-info">
-                                        <a href="job-details.html" class="section-btn btn btn-primary btn-block">Create your Resume</a>
-                                   </div>
-                              </div>
-                         </div>
-
-                         <div class="col-md-4 col-sm-4">
-                              <div class="courses-thumb courses-thumb-secondary">
-                                   <div class="courses-top">
-                                        <div class="courses-image">
-                                             <img src="images/product-3-720x480.jpg" class="img-responsive" alt="">
-                                        </div>
-                                        <div class="courses-date">
-                                             <span title="Posted on"><i class="fa fa-calendar"></i> 15-06-2020</span>
-                                             <span title="Type"><i class="fa fa-file"></i> templates</span>
-                                        </div>
-                                   </div>
-
-                                   <div class="courses-detail">
-                                        <h3><a href="job-details.html">Lorem ipsum dolor sit amet</a></h3>
+     }
 
 
-                                   </div>
 
-                                   <div class="courses-info">
-                                        <a href="job-details.html" class="section-btn btn btn-primary btn-block">Create your resume</a>
-                                   </div>
-                              </div>
-                         </div>
+
+
+}
+
+
+
+                          ?>
+
+              
+                        
+                        
 
                     </div>
                </div>

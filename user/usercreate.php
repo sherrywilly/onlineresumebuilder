@@ -2,7 +2,7 @@
 
 error_reporting(0);
 require '../config.php';
-
+session_start();
 if (isset($_POST['var'])) {
     if ($_POST['var'] == 'insert') {
         $fname = $_POST['fname'];
@@ -11,11 +11,10 @@ if (isset($_POST['var'])) {
         $dob = $_POST['dob'];
         $email = $_POST['email'];
         $phone = $_POST['phone'];
-        $fresh = $_POST['fresher'];
         $obj = $_POST['objective'];
-        $uid = 1;
+        $uid = $_SESSION['userid'];
 
-        $sql = "insert into resume_build(fname,lname,address,dob,email,phone,fresher,uid,obj) values ('$fname','$lname','$add','$dob','$email','$phone','$fresh','$uid','$obj')";
+        $sql = "insert into resume_build(fname,lname,address,dob,email,phone,uid,obj) values ('$fname','$lname','$add','$dob','$email','$phone','$uid','$obj')";
 
         if (mysqli_query($conn, $sql) == true) {
             $last_id = mysqli_insert_id($conn);
@@ -43,7 +42,7 @@ if (isset($_POST['var'])) {
         $dob = $_POST['dob'];
         $email = $_POST['email'];
         $phone = $_POST['phone'];
-        $fresh = $_POST['fresher'];
+
         $id = $_POST['rid'];
         $obj = $_POST['objective'];
 
@@ -53,8 +52,7 @@ if (isset($_POST['var'])) {
         dob ='$dob',
         email = '$email',
         phone ='$phone',
-        obj = '$obj',
-        fresher ='$fresh' where id ='$id'";
+        obj = '$obj' where id ='$id'";
 
         if (mysqli_query($conn, $sql) == true) {
             $last_id = mysqli_insert_id($conn);
@@ -99,7 +97,6 @@ if (isset($_POST['action'])) {
         $user['pin'] = $row['pin'];
         $user['email'] = $row['email'];
         $user['phone'] = $row['phone'];
-        $user['fresher'] = $row['fresher'];
         $user['obj'] = $row['obj'];
 
         echo json_encode($user);

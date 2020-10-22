@@ -14,10 +14,12 @@
      <link rel="stylesheet" href="../css/font-awesome.min.css">
      <link rel="stylesheet" href="../css/owl.carousel.css">
      <link rel="stylesheet" href="../css/owl.theme.default.min.css">
+ <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
      <!-- MAIN CSS -->
      <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/mystyle.css">
+        
 
 </head>
 <body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">

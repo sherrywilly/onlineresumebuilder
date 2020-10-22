@@ -29,7 +29,7 @@ if(mysqli_num_rows($result)>0){
 			<div class="text-right mt-1">
 
             <!-- <form action="<?php echo $row['path']; ?>" method="get"> -->
-            	<form action="../templates/test.php" method="get">
+            	<form action="../templates/test2.php" method="get">
             	<input type="hidden" name="download" id="reid" class="resumeid">
            <button type="submit" class="btn btn-outline-success"> <i class="fas fa-download">download</i></button>
 

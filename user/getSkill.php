@@ -16,7 +16,8 @@ $id = $_POST['rid'];
  			<table class="table text-center">
  				<thead>
  					<tr>
- 						<th>skills</th>
+						 <th>skills</th>
+						 <th>action</th>
  					</tr>
  				</thead>
  				<tbody>
@@ -28,7 +29,8 @@ $id = $_POST['rid'];
                             ?>
  							<tr>
 
- 							<td> <?php echo $r['skill']; ?> </td>
+							 <td> <?php echo $r['skill']; ?> </td>
+							 <td><button class="btn btn-sm btn-outline-danger skill-droper" id="<?php echo $r['id']; ?>"> <i class="fa fa-trash" aria-hidden="true"></i></button></td>
  						
  							</tr>
 

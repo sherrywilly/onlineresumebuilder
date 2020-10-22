@@ -31,6 +31,7 @@ include 'common/header.php';
                          <input type="password" class="form-control" placeholder="Enter your password " name="upass" required>
                     </div>
                     <div class="col-md-4 col-sm-12">
+                      <input type="hidden" name="action" value="login">
                          <input type="submit" class="form-control"  value="Login">
                     </div>
 

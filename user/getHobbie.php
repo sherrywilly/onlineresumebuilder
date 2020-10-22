@@ -1,5 +1,4 @@
-<?php 
-
+<?php
 
 require '../config.php';
 
@@ -18,31 +17,29 @@ $id = $_POST['rid'];
  			<table class="table text-center">
  				<thead>
  					<tr>
- 						<th>Hobbies</th>
+						 <th>Hobbies</th>
+						 <th>action</th>
  					</tr>
  				</thead>
  				<tbody>
- 					<?php 
- 					$sql = "select * from hobbies where rid='$id'";
- 					$result = mysqli_query($conn,$sql);
- 					if(mysqli_num_rows($result)>0){
- 						while($r=mysqli_fetch_assoc($result)){
-
-
-?>
+ 					<?php
+                    $sql = "select * from hobbies where rid='$id'";
+                    $result = mysqli_query($conn, $sql);
+                    if (mysqli_num_rows($result) > 0) {
+                        while ($r = mysqli_fetch_assoc($result)) {
+                            ?>
  							<tr>
 
- 							<td> <?php echo $r['hobbie']; ?> </td>
+							 <td> <?php echo $r['hobbie']; ?> </td>
+							 <td><button class="btn btn-sm btn-outline-danger hobbie-droper" id="<?php echo $r['id']; ?>"> <i class="fa fa-trash" aria-hidden="true"></i></button></td>
  						
  							</tr>
 
  							<?php
- 						}
+                        }
+                    }
 
- 					}
-
-
- 					?>
+                    ?>
  				</tbody>
  				
  			</table>

@@ -42,9 +42,10 @@ if($_POST['insert']=="work-form"){
 	$to_date = $_POST['to'];
 	$position = $_POST['post'];
 	$company = $_POST['company'];
+	$desc = $_POST['desc'];
 	$rsd = $_POST['rid'];
 
-	$sql ="insert into work(rid,from_date,to_date,post,company) values ('$rsd','$from_date','$to_date','$position','$company')";
+	$sql ="insert into work(rid,from_date,to_date,post,company,description) values ('$rsd','$from_date','$to_date','$position','$company','$desc')";
 	if(mysqli_query($conn, $sql) ==TRUE){
 		$msg  = 'data updated successfully';
 	}else{

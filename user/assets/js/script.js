@@ -16,7 +16,10 @@ function showTab(n) {
     document.getElementById("nextBtn").id = "cover";
 
   } else {
+
     document.getElementById("nextBtn").innerHTML = "Next";
+  
+
   }
   //... and run a function that will display the correct step indicator:
   fixStepIndicator(n)
@@ -34,7 +37,7 @@ function nextPrev(n) {
   // if you have reached the end of the form...
   if (currentTab >= x.length) {
     // ... the form gets submitted:
-     location.reload();
+     window.location='template.php';
   }
   // Otherwise, display the correct tab:
   showTab(currentTab);
