@@ -1,8 +1,8 @@
 <?php
 require '../config.php';
 include 'header.php';
-
-$sql = 'select * from users where id=1';
+$test = $_SESSION['adminid'];
+$sql = "select * from admin where id='$test'";
 $result = mysqli_query($conn, $sql);
 $res = mysqli_fetch_assoc($result);
 
@@ -18,24 +18,15 @@ $res = mysqli_fetch_assoc($result);
 			<form method="POST">
 			<div class="row justify-content-around">
 				<div class="col-md-2">
-					<label for="">First Name</label>
+					<label for="">username</label>
 				</div>
 				<div class="col-md-8">
 <div class="form-group">
-	<input type="text" name="fname" id="" class="form-control" value="<?php echo $res['fname']; ?>">
+	<input type="text" name="uname" id="" class="form-control" value="<?php echo $res['username']; ?>">
 </div>
 				</div>
 			</div>
-				<div class="row justify-content-around">
-				<div class="col-md-2">
-					<label for="">Last Name</label>
-				</div>
-				<div class="col-md-8">
-<div class="form-group">
-	<input type="text" name="lname" id="" class="form-control" value="<?php echo $res['lname']; ?>">
-</div>
-				</div>
-			</div>
+				
 				<div class="row justify-content-around">
 				<div class="col-md-2">
 					<label for="">Email</label>
@@ -46,16 +37,7 @@ $res = mysqli_fetch_assoc($result);
 </div>
 				</div>
 			</div>
-				<div class="row justify-content-around">
-				<div class="col-md-2">
-					<label for="">Phone</label>
-				</div>
-				<div class="col-md-8">
-<div class="form-group">
-	<input type="text" name="phone" id="" class="form-control" value="<?php echo $res['phone']; ?>">
-</div>
-				</div>
-			</div>
+				
 
 	<input type="hidden" name="uid" id="" class="form-control" value="<?php echo $res['id']; ?>">
 	<input type="hidden" name="update" id="" class="form-control" value="update-profile">
@@ -88,29 +70,24 @@ include 'footer.php';
 
 if (isset($_POST['update'])) {
     if ($_POST['pass'] == '') {
-        $fname = $_POST['fname'];
-        $lname = $_POST['lname'];
+        $username = $_POST['uname'];
+        $id = $_POST['uid'];
         $email = $_POST['email'];
-        $phone = $_POST['phone'];
 
-        $sql = "update users set fname='$fname',
-    lname='$lname',
-    email = '$email',
-    phone = '$phone' where id = 1";
+        $sql = "update admin set username='$username',
+    email = '$email'
+     where id = '$id'";
         mysqli_query($conn, $sql);
         header('location:profile.php');
     } else {
-        $fname = $_POST['fname'];
-        $lname = $_POST['lname'];
+        $username = $_POST['uname'];
         $email = $_POST['email'];
-        $phone = $_POST['phone'];
         $pass = $_POST['pass'];
+        $id = $_POST['uid'];
 
-        echo $sql = "update users set fname= '$fname',
-    lname = '$lname',
+         $sql = "update admin set username= '$username',
     email = '$email',
-    phone = '$phone',
-    password ='$pass' where id = 1";
+    password ='$pass' where id = '$id'";
         mysqli_query($conn, $sql);
         header('location:profile.php');
     }

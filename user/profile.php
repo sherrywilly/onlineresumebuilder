@@ -1,8 +1,8 @@
 <?php
 require '../config.php';
 include 'header.php';
-
-$sql = 'select * from users where id=1';
+$userid = $_SESSION['userid'];
+$sql = "select * from users where id='$userid'";
 $result = mysqli_query($conn, $sql);
 $res = mysqli_fetch_assoc($result);
 
@@ -106,7 +106,7 @@ if (isset($_POST['update'])) {
         $phone = $_POST['phone'];
         $pass = $_POST['pass'];
 
-        echo $sql = "update users set fname= '$fname',
+         $sql = "update users set fname= '$fname',
     lname = '$lname',
     email = '$email',
     phone = '$phone',

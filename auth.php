@@ -15,10 +15,11 @@ $result2 = mysqli_query($conn, $sqlx);
 
 
 if(mysqli_num_rows($result1)==1){
-
+ $res = mysqli_fetch_assoc($result1);
 echo"successfully loged in";
         $_SESSION['usertype'] = 'admin';
         $_SESSION['name'] = $uname;
+        $_SESSION['adminid'] = $res['id'];
         header('Location:admin/index.php');
 
 }elseif(mysqli_num_rows($result2)==1){
