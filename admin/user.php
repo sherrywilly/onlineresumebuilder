@@ -1,9 +1,6 @@
-<?php 
+<?php
 require '../config.php';
 include 'header.php';
-
-
-
 
  ?>
 
@@ -25,36 +22,31 @@ include 'header.php';
 						</tr>
 					</thead>
 					<tbody>
-<?php 
-$sql = "select * from users";
-$result = mysqli_query($conn,$sql);
-$si =1;
-if(mysqli_num_rows($result)>0){
-
-	while ($res = mysqli_fetch_assoc($result)) {
-?>
+<?php
+$sql = 'select * from users';
+$result = mysqli_query($conn, $sql);
+$si = 1;
+if (mysqli_num_rows($result) > 0) {
+    while ($res = mysqli_fetch_assoc($result)) {
+        ?>
 
 
 
 <tr>
 	<td><?php echo $si++; ?></td>
-	<td><?php echo $res['fname']." ".$res['lname'];  ?></td>
-	<td><?php echo $res['phone'];  ?></td>
-	<td><?php echo  $res['email'];  ?></td>
-	<td>   <button id="<?php echo  $res['id'];  ?>"  class="trash btn"> <i class="fas fa-trash-alt" style="color:red;" style="border:none;"></i></button></td>
+	<td><?php echo $res['fname'].' '.$res['lname']; ?></td>
+	<td><?php echo $res['phone']; ?></td>
+	<td><?php echo  $res['email']; ?></td>
+	<td>   <button id="<?php echo  $res['id']; ?>"  class="trash btn"> <i class="fas fa-trash-alt" style="color:red;" style="border:none;"></i></button></td>
 </tr>
 
 
 
 <?php
 
-
-
-		# code...
-	}
+        // code...
+    }
 }
-
-
 
  ?>
 
@@ -106,11 +98,8 @@ if(mysqli_num_rows($result)>0){
 
 
 
- <?php 
+ <?php
 
 include 'footer.php';
-
-
-
 
  ?>

@@ -2,12 +2,12 @@
 
 include 'header.php';
 require '../config.php';
-$user_id =$_SESSION['userid'];
+$user_id = $_SESSION['userid'];
 $sql = "select * from resume_build where uid = '$user_id'";
-$result = mysqli_query($conn,$sql);
+$result = mysqli_query($conn, $sql);
 
-if(mysqli_num_rows($result)>0){
-  ?>
+if (mysqli_num_rows($result) > 0) {
+    ?>
 
 	
 
@@ -29,19 +29,17 @@ if(mysqli_num_rows($result)>0){
 						<tbody>
 
 							<?php
-							$si =1;
-							while ($r=mysqli_fetch_assoc($result)) {
-							  ?>
+                            $si = 1;
+    while ($r = mysqli_fetch_assoc($result)) {
+        ?>
 							<tr>
 								<td><?php echo $si++; ?></td>
-								<td><?php echo $r['fname']." ".$r['lname']; ?></td>
+								<td><?php echo $r['fname'].' '.$r['lname']; ?></td>
 								<td><a href="create.php" class="btn btn-outline-success clicker" id="<?php echo $r['id']; ?>"><i class="fas fa-download">&nbsp;download</i></a></td>
 								<td><button class="btn btn-outline-danger drop" id="<?php echo $r['id']; ?>"><i class="fas fa-user-minus">&nbsp;delete</i></button></td>
 							</tr>
-							<?php 
-}
-
-							 ?>
+							<?php
+    } ?>
 						</tbody>
 					</table>
 				</div>
@@ -54,9 +52,7 @@ if(mysqli_num_rows($result)>0){
 
 </div>
 
-<?php 
-
-
+<?php
 }
 
  ?>
@@ -128,7 +124,7 @@ $('.drop').click(function(){
 })
 
 </script>
-<?php 
+<?php
 
 include 'footer.php';
 

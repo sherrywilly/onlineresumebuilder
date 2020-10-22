@@ -9,17 +9,14 @@ require '../config.php';
 <div class="container mt-3">
 	<div class="row">
 
-<?php 
-$sql = "select * from template";
+<?php
+$sql = 'select * from template';
 
-$result = mysqli_query($conn,$sql);
+$result = mysqli_query($conn, $sql);
 
-if(mysqli_num_rows($result)>0){
-
-	while($row=mysqli_fetch_assoc($result)){
-
-
- ?>
+if (mysqli_num_rows($result) > 0) {
+    while ($row = mysqli_fetch_assoc($result)) {
+        ?>
 
 
 		<div class="col-md-4">
@@ -45,11 +42,10 @@ if(mysqli_num_rows($result)>0){
 
 
 
-		<?php 
-
+		<?php
+    }
 }
-}
-		 ?>
+         ?>
 		
 	</div>
 </div>

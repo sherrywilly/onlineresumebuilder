@@ -1,22 +1,14 @@
-<?php 
+<?php
 session_start();
-if(isset($_SESSION['usertype'])){
-if($_SESSION['usertype']=='admin'){
- header("Location:admin/index.php");
-
-}else{
-header("Location:user/index.php");
-
-}
-
-
-
-
-
+if (isset($_SESSION['usertype'])) {
+    if ($_SESSION['usertype'] == 'admin') {
+        header('Location:admin/index.php');
+    } else {
+        header('Location:user/index.php');
+    }
 }
 
 require 'config.php';
-
 
  ?>
 
@@ -140,19 +132,15 @@ require 'config.php';
                               </div>
                          </div>
 
-                          <?php 
+                          <?php
 
-$sql ="select * from template";
+$sql = 'select * from template';
 
-$result = mysqli_query($conn,$sql);
+$result = mysqli_query($conn, $sql);
 
-if(mysqli_num_rows($result)>0){
-
-
-
-
-     while($r = mysqli_fetch_assoc($result)){
-?>
+if (mysqli_num_rows($result) > 0) {
+    while ($r = mysqli_fetch_assoc($result)) {
+        ?>
            <div class="col-md-4 col-sm-4">
                               <div class="courses-thumb courses-thumb-secondary">
                                    <div class="courses-top">
@@ -174,17 +162,8 @@ if(mysqli_num_rows($result)>0){
                          </div>
 
 <?php
-
-
-     }
-
-
-
-
-
+    }
 }
-
-
 
                           ?>
 

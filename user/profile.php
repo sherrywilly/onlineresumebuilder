@@ -1,12 +1,10 @@
-<?php 
+<?php
 require '../config.php';
 include 'header.php';
 
-
-$sql="select * from users where id=1";
+$sql = 'select * from users where id=1';
 $result = mysqli_query($conn, $sql);
-$res = mysqli_fetch_assoc($result)
-
+$res = mysqli_fetch_assoc($result);
 
  ?>
 
@@ -85,49 +83,37 @@ $res = mysqli_fetch_assoc($result)
 </div>
 
 
- <?php 
+ <?php
 include 'footer.php';
 
+if (isset($_POST['update'])) {
+    if ($_POST['pass'] == '') {
+        $fname = $_POST['fname'];
+        $lname = $_POST['lname'];
+        $email = $_POST['email'];
+        $phone = $_POST['phone'];
 
-if(isset($_POST['update'])){
-
-if($_POST['pass']==''){
-	$fname = $_POST['fname'];
-	$lname = $_POST['lname'];
-	$email = $_POST['email'];
-	$phone = $_POST['phone'];
-    
-    $sql = "update users set fname='$fname',
+        $sql = "update users set fname='$fname',
     lname='$lname',
     email = '$email',
     phone = '$phone' where id = 1";
-    mysqli_query($conn,$sql);
-    header("location:profile.php");
+        mysqli_query($conn, $sql);
+        header('location:profile.php');
+    } else {
+        $fname = $_POST['fname'];
+        $lname = $_POST['lname'];
+        $email = $_POST['email'];
+        $phone = $_POST['phone'];
+        $pass = $_POST['pass'];
 
-
-}else{
-
-
-    $fname = $_POST['fname'];
-	$lname = $_POST['lname'];
-	$email = $_POST['email'];
-	$phone = $_POST['phone'];
-    $pass = $_POST['pass'];
-
-	echo $sql = "update users set fname= '$fname',
+        echo $sql = "update users set fname= '$fname',
     lname = '$lname',
     email = '$email',
     phone = '$phone',
     password ='$pass' where id = 1";
-    mysqli_query($conn,$sql);
-    header("location:profile.php");
+        mysqli_query($conn, $sql);
+        header('location:profile.php');
+    }
 }
-
-
-
-}
-
-
-
 
   ?>

@@ -40,14 +40,13 @@ require '../config.php';
 					<tbody>
 
 
-<?php 
-$sql = "select * from template";
-$result = mysqli_query($conn,$sql);
-$si =1;
-if(mysqli_num_rows($result)>0){
-while($row = mysqli_fetch_assoc($result)){
-
-?>
+<?php
+$sql = 'select * from template';
+$result = mysqli_query($conn, $sql);
+$si = 1;
+if (mysqli_num_rows($result) > 0) {
+    while ($row = mysqli_fetch_assoc($result)) {
+        ?>
 
 <tr style="border:none">
 						<td><?php echo $si++; ?></td>
@@ -56,9 +55,7 @@ while($row = mysqli_fetch_assoc($result)){
 						<td><div class="btn text-white btn-outline-dark trash" id="<?php echo $row['id']; ?>"><i class="fas fa-trash-alt"></i></div></td>
 					</tr>
 					<?php
-
-
-}
+    }
 }
 
  ?>

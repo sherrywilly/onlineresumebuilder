@@ -1,13 +1,11 @@
-<?php 
+<?php
 require '../config.php';
 $did = $_GET['download'];
 $sql = "select * from resume_build where id = '$did'";
-$result = mysqli_query($conn,$sql);
+$result = mysqli_query($conn, $sql);
 
-if(mysqli_num_rows($result)==1){
-$r = mysqli_fetch_assoc($result);
-
-?>
+if (mysqli_num_rows($result) == 1) {
+    $r = mysqli_fetch_assoc($result); ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html lang="en">
@@ -124,18 +122,12 @@ a#pdf:hover { background: #222; }
 						</div>
 					</div><!--// .yui-gf -->
 
-             <?php 
- 			
-
+             <?php
 
 $sqlx = "select * from skills where rid ='$did'";
-$result1 = mysqli_query($conn, $sqlx); 
-if(mysqli_num_rows($result1)>0){
-
-
-
-
-              ?>
+    $result1 = mysqli_query($conn, $sqlx);
+    if (mysqli_num_rows($result1) > 0) {
+        ?>
 
 
 
@@ -152,34 +144,30 @@ if(mysqli_num_rows($result1)>0){
 						<div class="yui-u">
 
 							<?php
-                        while($res1 = mysqli_fetch_assoc($result1)){
-                        ?>
+                        while ($res1 = mysqli_fetch_assoc($result1)) {
+                            ?>
 								<div class="talent">
 									<h2><?php echo $res1['skill']; ?></h2>
 								</div>
-								<?php 
-}
-								 ?>
+								<?php
+                        } ?>
 
 						</div>
 					</div>
-<?php 
-}
- ?>
+<?php
+    } ?>
 
 
 
 
 					<!--// .yui-gf -->
 
-<?php 
-
-
+<?php
 
 $sqly = "select * from work where rid ='$did'";
-$result2 = mysqli_query($conn, $sqly); 
-if(mysqli_num_rows($result2)>0){
- ?>
+    $result2 = mysqli_query($conn, $sqly);
+    if (mysqli_num_rows($result2) > 0) {
+        ?>
 
 					<div class="yui-gf">
 	
@@ -188,23 +176,20 @@ if(mysqli_num_rows($result2)>0){
 						</div><!--// .yui-u -->
 
 						<div class="yui-u">
-							<?php 
+							<?php
 
-                           while($r2=mysqli_fetch_assoc($result2)){
-
-							 ?>
+                           while ($r2 = mysqli_fetch_assoc($result2)) {
+                               ?>
 
 							<div class="job">
-								<h2><?php echo $r2['company'] ?></h2>
-								<h3><?php echo $r2['post'] ?></h3>
-								<h4><?php echo $r2['from_date']."-".$r2['to_date']; ?></h4>
-								<p><?php echo $r2['description'] ?></p>
+								<h2><?php echo $r2['company']; ?></h2>
+								<h3><?php echo $r2['post']; ?></h3>
+								<h4><?php echo $r2['from_date'].'-'.$r2['to_date']; ?></h4>
+								<p><?php echo $r2['description']; ?></p>
 							</div>
 
-                                  <?php 
-
-}
-                                   ?>
+                                  <?php
+                           } ?>
 
 
 
@@ -212,43 +197,39 @@ if(mysqli_num_rows($result2)>0){
 
 						</div><!--// .yui-u -->
 					</div><!--// .yui-gf -->
-<?php 
-}
- ?>
- <?php 
-
+<?php
+    } ?>
+ <?php
 
 $sqlz = "select * from education where rid ='$did'";
-$result3 = mysqli_query($conn, $sqlz); 
-if(mysqli_num_rows($result3)>0){
-
-
-
-  ?>
+    $result3 = mysqli_query($conn, $sqlz);
+    if (mysqli_num_rows($result3) > 0) {
+        ?>
 					<div class="yui-gf last">
 						<div class="yui-u first">
 							<h2>Education</h2>
 						</div>
-						<?php 
-                        while($r3=mysqli_fetch_assoc($result3)){
-
-						 ?>
+						<?php
+                        while ($r3 = mysqli_fetch_assoc($result3)) {
+                            ?>
 						<div class="yui-u">
-							<h2 style="text-transform: capitalize;"><?php echo $r3['college'] ?></h2>
-							<h3><?php echo $r3['course'] ?>&mdash;<strong><?php echo $r3['from_date'].'-'.$r3['to_date'] ?></strong> </h3>
+							<h2 style="text-transform: capitalize;"><?php echo $r3['college']; ?></h2>
+							<h3><?php echo $r3['course']; ?>&mdash;<strong><?php echo $r3['from_date'].'-'.$r3['to_date']; ?></strong> </h3>
 						</div>
 
 
-					<?php } ?>
+					<?php
+                        } ?>
 				</div><!--// .yui-gf -->
 
-<?php } ?>
+<?php
+    } ?>
 				</div><!--// .yui-b -->
 			</div><!--// yui-main -->
 		</div><!--// bd -->
 
 		<div id="ft">
-			<p><?php echo $r['fname']." ".$r['lname']; ?> &mdash; <a href="mailto:<?php echo $r['email']; ?>"><?php echo $r['email']; ?></a> &mdash;<?php echo $r['phone']; ?></p>
+			<p><?php echo $r['fname'].' '.$r['lname']; ?> &mdash; <a href="mailto:<?php echo $r['email']; ?>"><?php echo $r['email']; ?></a> &mdash;<?php echo $r['phone']; ?></p>
 		</div><!--// footer -->
 
 	</div><!-- // inner -->
@@ -263,11 +244,6 @@ if(mysqli_num_rows($result3)>0){
 </html>
 
 <?php
-
-
-
-
 }
-
 
  ?>
