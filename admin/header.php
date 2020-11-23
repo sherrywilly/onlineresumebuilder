@@ -20,6 +20,14 @@ if (!isset($_SESSION['usertype']) == 'admin') {
 <link rel="stylesheet" type="text/css" href="assets/css/mystyle.css">
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 </head>
+<style>
+  body{
+    /* height: 100%;
+    background-image:url(./assets/s.jpg);
+    background-repeat: no-repeat;
+      background-size: cover; */
+  }
+</style>
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light custom-navbar" id="nav">

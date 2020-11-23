@@ -30,7 +30,7 @@ include 'common/header.php';
                          <input type="text" class="form-control" placeholder="first name" name="fname" id="fname" required>
                          <input type="text" class="form-control" placeholder="last name" name="lname" id="lname" required>
                          <input type="email" class="form-control" placeholder="your email" name="email" id="emailuser" required>
-                         <input type="phone" class="form-control" placeholder="phone no" name="phone" id="phone" required>
+                         <input type="number" class="form-control" placeholder="phone no" name="phone" id="phone" required>
                          <input type="password" class="form-control" placeholder="password" name="pass1" id="p1" required>
           
                          <input type="password" class="form-control" placeholder="confirm your password " name="pass2" id="p2" required>
@@ -73,6 +73,17 @@ e.preventDefault();
         alert("please fill up all the fields");
         return false;
       }
+      
+console.log(phone.length);
+if(phone.length!=10){
+  alert("phone  number should be 10 numbers");
+  return false;
+}
+
+
+
+
+
    if(p1!=p2){
     alert('password did not match');
     return false;

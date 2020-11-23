@@ -19,7 +19,14 @@ if (!isset($_SESSION['usertype']) == 'user') {
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="assets/css/mystyle.css">
-
+<style>
+    body{
+    /* height: 100%;
+    background-image:url(./assets/s.jpg);
+    background-repeat: no-repeat;
+      background-size: cover; */
+  }
+</style>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 </head>
 <body>

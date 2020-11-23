@@ -5,7 +5,7 @@ include 'header.php';
 ?>
 
 
-
+<div class="container">
     <div class="row">
         <div class="col-10 mx-auto">
             <div class="card m-5" style="background-color: transparent !important;border:none;">
@@ -13,7 +13,7 @@ include 'header.php';
                     <h1 style="color:white" class="font-weight-bold text-capitalize">create your resume</h1>
                     <!-- One "tab" for each step in the form: -->
                     <div class="tab">
-                      <div class="container">
+                   
                         <div class="container">
                             <div class="card" style="background-color: transparent !important;border:none;">
                                 <div class="card-body">
@@ -62,10 +62,9 @@ include 'header.php';
                             </div>
                         </div>
 
-                    </div>
+                 
 
-
-                    </div>
+                </div>
 
 
 
@@ -97,7 +96,7 @@ include 'header.php';
                                                 </div>
                                                 <div class="col-md-9">
                                                     <div class="form-group">
-                                                        <input type="date" name="from" id="" class="form-control">
+                                                        <input type="month" name="from"  class="form-control">
                                                     </div>
                                                 </div>
                                             </div>
@@ -108,7 +107,7 @@ include 'header.php';
                                                 </div>
                                                 <div class="col-md-9">
                                                     <div class="form-group">
-                                                        <input type="date" name="to" id="" class="form-control">
+                                                        <input type="month" name="to"  class="form-control">
                                                     </div>
                                                 </div>
                                             </div>
@@ -119,7 +118,7 @@ include 'header.php';
                                                 </div>
                                                 <div class="col-md-9">
                                                     <div class="form-group">
-                                                        <input type="text" name="course" id="" class="form-control">
+                                                        <input type="text" name="course"  class="form-control">
                                                     </div>
                                                 </div>
                                             </div>
@@ -130,7 +129,7 @@ include 'header.php';
                                                 </div>
                                                 <div class="col-md-9">
                                                     <div class="form-group">
-                                                        <input type="text" name="college" id="" class="form-control">
+                                                        <input type="text" name="college"  class="form-control">
                                                         <input type="hidden" name="insert" value="edu-form">
                                                         <input type="hidden" name="rid" class="rid" id="rid">
                                                     </div>
@@ -146,6 +145,7 @@ include 'header.php';
 
 
                             </div>
+                        
 
 
 
@@ -356,7 +356,8 @@ include 'header.php';
             </div>
         </div>
 
-  
+  </div>
+</div>
     <script src="assets/js/script.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 

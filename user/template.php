@@ -25,8 +25,8 @@ if (mysqli_num_rows($result) > 0) {
 			<img src="<?php echo $row['img']; ?>" alt="..." class="img-fluid img-thumbnail" style="object-fit:cover;width: 100%;height: 200px">
 			<div class="text-right mt-1">
 
-            <!-- <form action="<?php echo $row['path']; ?>" method="get"> -->
-            	<form action="../templates/test2.php" method="get">
+            <form action="<?php echo $row['path']; ?>" method="get">
+            	<!-- <form action="../templates/test2.php" method="get"> -->
             	<input type="hidden" name="download" id="reid" class="resumeid">
            <button type="submit" class="btn btn-outline-success"> <i class="fas fa-download">download</i></button>
 
@@ -52,12 +52,12 @@ if (mysqli_num_rows($result) > 0) {
 ''
 <script>
 	let x =sessionStorage.getItem("getid")
-	alert(x);
-// if(x==""||x==null){
+	
+if(x==""||x==null){
 
-// window.location = "./";
+window.location = "./";
 
-// 	}else{
+	}else{
 document.querySelectorAll(".resumeid").value = "test";
 let y = document.getElementsByClassName("resumeid");
 console.log(y.length);
@@ -75,7 +75,7 @@ for(i=0;i<y.length;i++){
 
 
 
-	// }
+	}
 
 
 

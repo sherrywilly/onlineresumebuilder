@@ -83,7 +83,7 @@ if (mysqli_num_rows($result) > 0) {
     <div class="modal-content">
 <form enctype="multipart/form-data" id="template-form" method="POST" action="template-action.php">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Add template</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
